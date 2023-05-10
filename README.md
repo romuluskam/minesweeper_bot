@@ -1,2 +1,2 @@
 # minesweeper_bot
-Reinforcment learning realization for Minesweeper AI bot.
+Reinforcement learning realization for Minesweeper AI bot.
