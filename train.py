@@ -23,7 +23,7 @@ wins_list, ep_rewards = [], []
 
 game = Game(rows, cols, mines)
 agent = Agent(game)
-agent.epsilon = 0.3
+agent.epsilon = 0.31
 
 # восстановление обучения
 if os.environ['enviroment'] == 'colab':
@@ -78,4 +78,8 @@ for episode in tqdm(range(episode, episodes+1), unit=' episode'):
         with open(PATH_TO_STATS, 'wb') as output:
             pickle.dump([agent.replay_memory, episode, wins_list,
                         ep_rewards, agent.epsilon], output)
+        with open(PATH_TO_STATS+'_', 'wb') as output:
+            pickle.dump([agent.replay_memory, episode, wins_list,
+                        ep_rewards, agent.epsilon], output)
         agent.model.save_weights(PATH_TO_MODEL)
+        agent.model.save_weights(PATH_TO_MODEL+'_')
