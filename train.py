@@ -23,7 +23,7 @@ wins_list, ep_rewards = [], []
 
 game = Game(rows, cols, mines)
 agent = Agent(game)
-
+agent.epsilon = 0.3
 
 # восстановление обучения
 if os.environ['enviroment'] == 'colab':

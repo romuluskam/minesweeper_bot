@@ -31,8 +31,6 @@ EPSILON_MIN = 0.01
 # обовляем веса таргет-модели каждые N эпизодов
 UPDATE_TARGET_EVERY = 100
 
-MODEL_NAME = 'conv'
-
 
 # архитектура модели
 def NN(learn_rate, input_dims, output_dims):
@@ -52,9 +50,10 @@ def NN(learn_rate, input_dims, output_dims):
 
 
 class Agent(object):
-    def __init__(self, game, model_name=MODEL_NAME):
+    def __init__(self, game):
         self.game = game
-        self.model_name = model_name
+        self.model_name = str(self.game.board.rows) + \
+            'x' + str(self.game.board.cols)
         self.discount = DISCOUNT
         self.learn_rate = LEARNING_RATE
         self.epsilon = EPSILON
