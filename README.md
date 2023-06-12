@@ -1,12 +1,26 @@
 # minesweeper_bot
 
-Reinforcment learning realization for Minesweeper AI bot.
+Игровой бот для игры "Сапёр".
+Реализация методов обучения с подкреплением, в частности DQN.
 
-## GUI using PyGame
+### Что сделано?
 
-Run gui_game.py to play Minesweeper with graphical interface.
+1. Реализована игровая среда "Сапер" (текстовая версия - для обучения нейросети)
+2. Создан агент, имеющий в своей основе нейросеть со сверточными 2D-слоями.
+3. Агент обучен более чем на 100 000 игровых эпизодах.
+4. Реализован графический интерфейс игры на PyGame с возможностью получить подсказку от обученного агента.
 
-Play game using mouse: _left click_ - to open a tile, _right click_ - to set flag.
+## Демонстрация
 
-Press _Space_ to get prediction using Agent.
+Выполните gui_game.py для запуска графического интерфейса игры.
+
+Управление:
+_Левая кнопка мыши_ - открыть ячейку
+_Правая кнопка мыши_ - поставить флаг
+_Пробел_ - предсказание лучшего хода от агента
+
 ![Minesweeper GUI gameplay](/gui_game.gif)
+
+### Стэк
+
+Python, Tensorflow, Keras
